@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<main class="col-md" style="margin-bottom: 305px; margin-top: 0px;">
+
+  <a data-id="" id="lecture-2" style="top: 0px;"></a><h1 class="no_toc"><a data-id="" href="#lecture-2">Lecture 2</a></h1>
+
+<ul id="markdown-toc">
+<li><a href="#loops" id="markdown-toc-loops">Loops</a></li>
+<li><a href="#while-loops" id="markdown-toc-while-loops">While Loops</a></li>
+<li><a href="#for-loops" id="markdown-toc-for-loops">For Loops</a></li>
+<li><a href="#improving-with-user-input" id="markdown-toc-improving-with-user-input">Improving with User Input</a></li>
+<li><a href="#more-about-lists" id="markdown-toc-more-about-lists">More About Lists</a></li>
+<li><a href="#length" id="markdown-toc-length">Length</a></li>
+<li><a href="#dictionaries" id="markdown-toc-dictionaries">Dictionaries</a></li>
+<li><a href="#mario" id="markdown-toc-mario">Mario</a></li>
+<li><a href="#summing-up" id="markdown-toc-summing-up">Summing Up</a></li>
+</ul>
+
+<a data-id="" id="loops" style="top: 0px;"></a><h2><a data-id="" href="#loops">Loops</a></h2>
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Essentially, loops are a way to do something over and over again.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Begin by typing <code class="language-plaintext highlighter-rouge">code cat.py</code> in the terminal window.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>In the text editor, begin with the following code:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Running this code by typing <code class="language-plaintext highlighter-rouge">python cat.py</code>, you’ll notice that the program meows three times.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>In developing as a programmer, you want to consider how one could improve areas of one’s code where one types the same thing over and over again. Imagine where one might want to “meow” 500 times. Would it be logical to type that same expression of <code class="language-plaintext highlighter-rouge">print("meow")</code> over and over again?</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Loops enable you to create a block of code that executes over and over again.</li>
+</ul>
+
+<a data-id="" id="while-loops" style="top: 0px;"></a><h2><a data-id="" href="#while-loops">While Loops</a></h2>
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>The <code class="language-plaintext highlighter-rouge">while</code> loop is nearly universal throughout all coding languages.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Such a loop will repeat a block of code over and over again.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>In the text editor window, edit your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how even though this code will execute <code class="language-plaintext highlighter-rouge">print("meow")</code> multiple times, it will never stop! It will loop forever. <code class="language-plaintext highlighter-rouge">while</code> loops work by repeatedly asking if the condition of the loop has been fulfilled. In this case, the compiler is asking “does <code class="language-plaintext highlighter-rouge">i</code> not equal zero?” When you get stuck in a loop that executes forever, you can press <code class="language-plaintext highlighter-rouge">control-c</code> on your keyboard to break out of the loop.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>To fix this loop that lasts forever, we can edit our code as follows</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span>
+</code></pre></div>    </div>
+<p>Notice that now our code executes properly, reducing <code class="language-plaintext highlighter-rouge">i</code> by <code class="language-plaintext highlighter-rouge">-1</code> for each “iteration” through the loop. This term iteration has special significance within coding. By iteration, we mean one cycle through the loop. The first iteration is the “0th” iteration through the loop. The second is the “1st” iteration. In programming we count starting with 0, then 1, then 2.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>We can further improve our code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div>    </div>
+<p>Notice that when we code <code class="language-plaintext highlighter-rouge">i = i + 1</code> we assign the value of <code class="language-plaintext highlighter-rouge">i</code> from the right to the left. Above, we are starting <code class="language-plaintext highlighter-rouge">i</code> at one, like most humans count (1, 2, 3). If you execute the code above, you’ll see it meows four times. It’s best practice in programming to begin counting with zero.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>We can improve our code, to start counting with zero:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</code></pre></div>    </div>
+<p>Notice how changing the operator to <code class="language-plaintext highlighter-rouge">i &lt; 3</code> allows our code to function as intended. We begin by counting with 0 and it iterates through our loop three times, producing three meows. Also, notice how <code class="language-plaintext highlighter-rouge">i += 1</code> is the same as saying <code class="language-plaintext highlighter-rouge">i = i + 1</code>.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Our code at this point is illustrated as follows:</p>
+
+<div class="mermaid" data-processed="true"><svg viewBox="0 0 223.96875 480.984375" style="max-width: 223.96875px;" height="480.984375" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaid-1655386406944" preserveAspectRatio="xMinYMin meet"><style>#mermaid-1655386406944 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-1655386406944 .error-icon{fill:#552222;}#mermaid-1655386406944 .error-text{fill:#552222;stroke:#552222;}#mermaid-1655386406944 .edge-thickness-normal{stroke-width:2px;}#mermaid-1655386406944 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1655386406944 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1655386406944 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1655386406944 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1655386406944 .marker{fill:#333333;stroke:#333333;}#mermaid-1655386406944 .marker.cross{stroke:#333333;}#mermaid-1655386406944 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-1655386406944 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaid-1655386406944 .cluster-label text{fill:#333;}#mermaid-1655386406944 .cluster-label span{color:#333;}#mermaid-1655386406944 .label text,#mermaid-1655386406944 span{fill:#333;color:#333;}#mermaid-1655386406944 .node rect,#mermaid-1655386406944 .node circle,#mermaid-1655386406944 .node ellipse,#mermaid-1655386406944 .node polygon,#mermaid-1655386406944 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaid-1655386406944 .node .label{text-align:center;}#mermaid-1655386406944 .node.clickable{cursor:pointer;}#mermaid-1655386406944 .arrowheadPath{fill:#333333;}#mermaid-1655386406944 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaid-1655386406944 .flowchart-link{stroke:#333333;fill:none;}#mermaid-1655386406944 .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaid-1655386406944 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaid-1655386406944 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaid-1655386406944 .cluster text{fill:#333;}#mermaid-1655386406944 .cluster span{color:#333;}#mermaid-1655386406944 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1655386406944 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g transform="translate(0, 0)"><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="9" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="0" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-A LE-B" id="L-A-B-0" d="M153.4296875,47L153.4296875,51.166666666666664C153.4296875,55.333333333333336,153.4296875,63.666666666666664,153.4296875,72C153.4296875,80.33333333333333,153.4296875,88.66666666666667,153.4296875,92.83333333333333L153.4296875,97"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-B LE-C" id="L-B-C-0" d="M153.4296875,136L153.4296875,140.16666666666666C153.4296875,144.33333333333334,153.4296875,152.66666666666666,153.51302083333334,161.08333333333334C153.59635416666666,169.5,153.76302083333334,178,153.84635416666666,182.25L153.9296875,186.5"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-D" id="L-C-D-0" d="M129.12447107025977,246.67915857025977L114.59461130854982,256.89669464188313C100.06475154683984,267.1142307135065,71.00503202341993,287.5493028567533,56.475172261709965,303.9335055950433C41.9453125,320.3177083333333,41.9453125,332.6510416666667,41.9453125,338.8177083333333L41.9453125,344.984375"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-D LE-E" id="L-D-E-0" d="M41.9453125,383.984375L41.9453125,388.1510416666667C41.9453125,392.3177083333333,41.9453125,400.6510416666667,51.916015625,409.91697881593717C61.88671875,419.18291596520766,81.828125,429.38145693041525,91.798828125,434.4807274130191L101.76953125,439.5799978956229"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-E LE-C" id="L-E-C-0" d="M156.14453125,439.5799978956229L166.115234375,434.4807274130191C176.0859375,429.38145693041525,196.02734375,419.18291596520766,205.998046875,406.66697881593717C215.96875,394.1510416666667,215.96875,379.3177083333333,215.96875,362.484375C215.96875,345.6510416666667,215.96875,326.8177083333333,208.74725939390814,308.1993551894252C201.5257687878163,289.58100204551704,187.08278757563258,271.1776290910341,179.86129696954072,261.9759426137926L172.63980636344886,252.77425613655114"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-C LE-F" id="L-C-F-0" d="M153.9296875,271.484375L153.84635416666666,277.5677083333333C153.76302083333334,283.6510416666667,153.59635416666666,295.8177083333333,153.51302083333334,308.0677083333333C153.4296875,320.3177083333333,153.4296875,332.6510416666667,153.4296875,338.8177083333333L153.4296875,344.984375"></path></g><g class="edgeLabels"><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g transform="translate(41.9453125, 307.984375)" class="edgeLabel"><g transform="translate(-15.609375, -12)" class="label"><foreignObject height="24" width="31.21875"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">True</span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g transform="translate(0, 0)" class="label"><foreignObject height="0" width="0"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel"></span></div></foreignObject></g></g><g transform="translate(153.4296875, 307.984375)" class="edgeLabel"><g transform="translate(-18.3671875, -12)" class="label"><foreignObject height="24" width="36.734375"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">False</span></div></foreignObject></g></g></g><g class="nodes"><g transform="translate(153.4296875, 27.5)" id="flowchart-A-12" class="node default default"><rect height="39" width="58.546875" y="-19.5" x="-29.2734375" ry="19.5" rx="19.5" style=""></rect><g transform="translate(-16.8984375, -12)" style="" class="label"><foreignObject height="24" width="33.796875"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">start</span></div></foreignObject></g></g><g transform="translate(153.4296875, 116.5)" id="flowchart-B-13" class="node default default"><rect height="39" width="45.984375" y="-19.5" x="-22.9921875" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-15.4921875, -12)" style="" class="label"><foreignObject height="24" width="30.984375"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">i = 0</span></div></foreignObject></g></g><g transform="translate(153.4296875, 228.4921875)" id="flowchart-C-15" class="node default default"><polygon style="" transform="translate(-42.4921875,42.4921875)" class="label-container" points="42.4921875,0 84.984375,-42.4921875 42.4921875,-84.984375 0,-42.4921875"></polygon><g transform="translate(-15.4921875, -12)" style="" class="label"><foreignObject height="24" width="30.984375"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">i &lt; 3</span></div></foreignObject></g></g><g transform="translate(41.9453125, 364.484375)" id="flowchart-D-17" class="node default default"><rect height="39" width="67.890625" y="-19.5" x="-33.9453125" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-26.4453125, -12)" style="" class="label"><foreignObject height="24" width="52.890625"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">"meow"</span></div></foreignObject></g></g><g transform="translate(128.95703125, 453.484375)" id="flowchart-E-19" class="node default default"><rect height="39" width="54.375" y="-19.5" x="-27.1875" ry="0" rx="0" style="" class="basic label-container"></rect><g transform="translate(-19.6875, -12)" style="" class="label"><foreignObject height="24" width="39.375"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">i += 1</span></div></foreignObject></g></g><g transform="translate(153.4296875, 364.484375)" id="flowchart-F-23" class="node default default"><rect height="39" width="55.078125" y="-19.5" x="-27.5390625" ry="19.5" rx="19.5" style=""></rect><g transform="translate(-15.1640625, -12)" style="" class="label"><foreignObject height="24" width="30.328125"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">stop</span></div></foreignObject></g></g></g></g></g></svg></div>
+
+<p>Notice how our loop counts i up to, but not through <code class="language-plaintext highlighter-rouge">3</code>.</p>
+</li>
+</ul>
+
+<a data-id="" id="for-loops" style="top: 0px;"></a><h2><a data-id="" href="#for-loops">For Loops</a></h2>
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>A <code class="language-plaintext highlighter-rouge">for</code> loop is a different type of loop.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>To best understand a <code class="language-plaintext highlighter-rouge">for</code> loop, it’s best to begin by talking about a new variable type called a <code class="language-plaintext highlighter-rouge">list</code> in Python. As in other areas of our lives, we can have a grocery list, a to-do list, etc.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>A <code class="language-plaintext highlighter-rouge">for</code> loop iterates through a <code class="language-plaintext highlighter-rouge">list</code> of items. For example, in the text editor window, modify your <code class="language-plaintext highlighter-rouge">cat.py</code> code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how clean this code is compared to your previous <code class="language-plaintext highlighter-rouge">while</code> loop code. In this code, <code class="language-plaintext highlighter-rouge">i</code> begins with <code class="language-plaintext highlighter-rouge">0</code>, meows, <code class="language-plaintext highlighter-rouge">i</code> is assigned <code class="language-plaintext highlighter-rouge">1</code>, meows, and, finally, <code class="language-plaintext highlighter-rouge">i</code> is assigned <code class="language-plaintext highlighter-rouge">2</code>, meows, and then ends.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>While this code accomplishes what we want, there are some possibilities for improving our code for extreme cases. At first glance, our code looks great. However, what if you wanted to iterate up to a million? It’s best to create code that can work with such extreme cases. Accordingly, we can improve our code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how <code class="language-plaintext highlighter-rouge">range(3)</code> provides back three values (<code class="language-plaintext highlighter-rouge">0</code>, <code class="language-plaintext highlighter-rouge">1</code>, and <code class="language-plaintext highlighter-rouge">2</code>) automatically. This code will execute and produce the intended effect, meowing three times.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Our code can be further improved. Notice how we never use <code class="language-plaintext highlighter-rouge">i</code> explicitly in our code. That is, while Python needs the <code class="language-plaintext highlighter-rouge">i</code> as a place to store the number of the iteration of the loop, we never use it for any other purpose. In Python, if such a variable does not have any other significance in our code, we can simply represent this variable as a single underscore <code class="language-plaintext highlighter-rouge">_</code>. Therefore, you can modify your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how changing the <code class="language-plaintext highlighter-rouge">i</code> to <code class="language-plaintext highlighter-rouge">_</code> has zero impact on the functioning of our program.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Our code can be further improved. To stretch your mind to the possibilities within Python, consider the following code:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"meow"</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how it will meow three times, but the program will produce <code class="language-plaintext highlighter-rouge">meowmeowmeow</code> as the result. Consider: How could you create a line break at the end of each meow?</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Indeed, you can edit your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"meow</span><span class="se">\n</span><span class="s">"</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">""</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how this code produces three meows, each on a separate line. By adding <code class="language-plaintext highlighter-rouge">end=""</code> and the <code class="language-plaintext highlighter-rouge">\n</code> we tell the compiler to add a line break at the end of each meow.</p>
+</li>
+</ul>
+
+<a data-id="" id="improving-with-user-input" style="top: 0px;"></a><h2><a data-id="" href="#improving-with-user-input">Improving with User Input</a></h2>
+
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Perhaps we want to get input from our user. We can use loops as a way of validating the input of the user.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>A common paradigm within Python is to use a <code class="language-plaintext highlighter-rouge">while</code> loop to validate the input of the user.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>We can improve our code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"What's n? "</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">break</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+
+</code></pre></div>    </div>
+<p>Notice how this while loop will always run (forever) until <code class="language-plaintext highlighter-rouge">n</code> is greater than <code class="language-plaintext highlighter-rouge">0</code>. When <code class="language-plaintext highlighter-rouge">n</code> is greater than <code class="language-plaintext highlighter-rouge">0</code>, the loop breaks. The <code class="language-plaintext highlighter-rouge">break</code> statement is a method by which to get out of the most recently executed loop. The <code class="language-plaintext highlighter-rouge">range</code> of the <code class="language-plaintext highlighter-rouge">for</code> loop is now <code class="language-plaintext highlighter-rouge">n</code>. Execute your code and see if it works as intended.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Bringing in our prior learning, we can use functions to further to improve our code:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">()</span>
+<span class="n">meow</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_number</span><span class="p">():</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"What's n? "</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="k">break</span><span class="p">;</span>
+<span class="k">return</span> <span class="n">n</span>
+
+
+<span class="k">def</span> <span class="nf">meow</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"meow"</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how not only did we change your code to operate in multiple functions, but we also used a <code class="language-plaintext highlighter-rouge">return</code> statement to <code class="language-plaintext highlighter-rouge">return</code> the value of <code class="language-plaintext highlighter-rouge">n</code> back to the <code class="language-plaintext highlighter-rouge">main</code> function.</p>
+</li>
+</ul>
+
+<a data-id="" id="more-about-lists" style="top: 0px;"></a><h2><a data-id="" href="#more-about-lists">More About Lists</a></h2>
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Consider the world of Hogwarts from the famed Harry Potter universe.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>In the terminal, type <code class="language-plaintext highlighter-rouge">code hogwarts.py</code>.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>In the text editor, code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hermoine"</span><span class="p">,</span> <span class="s">"Harry"</span><span class="p">,</span> <span class="s">"Ron"</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div>    </div>
+<p>Notice how we have a <code class="language-plaintext highlighter-rouge">list</code> of students with their names as above. We then print the student who is at the 0th location, “Hermoine”. Each of the other students are printed as well.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Just as we illustrated previously, we can use a loop to iterate over the list. You can improve your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hermoine"</span><span class="p">,</span> <span class="s">"Harry"</span><span class="p">,</span> <span class="s">"Ron"</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice that for each <code class="language-plaintext highlighter-rouge">student</code> in the <code class="language-plaintext highlighter-rouge">students</code> list, it will print the student as intended. You might wonder why we did not use the <code class="language-plaintext highlighter-rouge">_</code> designation as discussed prior. We choose not to do this because <code class="language-plaintext highlighter-rouge">student</code> is explicitly used in our code.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists">lists</a>.</li>
+</ul>
+
+<a data-id="" id="length" style="top: 0px;"></a><h2><a data-id="" href="#length">Length</a></h2>
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>We can utilize <code class="language-plaintext highlighter-rouge">len</code> as a way of checking the length of the <code class="language-plaintext highlighter-rouge">list</code> called <code class="language-plaintext highlighter-rouge">students</code>.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Imagine that you don’t simply want to print the name of the student, but also their position in the list. To accomplish this, you can edit your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hermoine"</span><span class="p">,</span> <span class="s">"Harry"</span><span class="p">,</span> <span class="s">"Ron"</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">students</span><span class="p">)):</span>
+<span class="k">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">student</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>    </div>
+<p>Notice how executing this code results in not only getting the position of each student plus one using <code class="language-plaintext highlighter-rouge">i + 1</code>, but also prints the name of each student. <code class="language-plaintext highlighter-rouge">len</code> allow you to dynamically see how long the list of the students is regardless how much it grows.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>You can learn more in Python’s documentation of <a href="https://docs.python.org/3/library/functions.html?highlight=len#len">len</a>.</li>
+</ul>
+
+<a data-id="" id="dictionaries" style="top: 0px;"></a><h2><a data-id="" href="#dictionaries">Dictionaries</a></h2>
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><code class="language-plaintext highlighter-rouge">dict</code>s or dictionaries is a data structure that allows you to associate keys with values.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Where a <code class="language-plaintext highlighter-rouge">list</code> is a list of multiple values, a <code class="language-plaintext highlighter-rouge">dict</code> associates a key with a value.</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Considering the houses of Hogwarts, we might assign specific students to specific houses.</p>
+
+<p><img src="cs50pWeek2Slide17.png" alt="Harry Potter Names." title="Harry Potter Names."></p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>We could use <code class="language-plaintext highlighter-rouge">list</code>s alone to accomplish this:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Hermoine"</span><span class="p">,</span> <span class="s">"Harry"</span><span class="p">,</span> <span class="s">"Ron"</span><span class="p">,</span> <span class="s">"Draco"</span><span class="p">]</span>
+<span class="n">houses</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Gryffindor"</span><span class="p">,</span> <span class="s">"Gryffindor"</span><span class="p">,</span> <span class="s">"Griffindor"</span><span class="p">,</span> <span class="s">"Slytherin"</span><span class="p">]</span>
+</code></pre></div>    </div>
+<p>Notice that we could promise that we will always keep these lists in order. The individual at the first position of <code class="language-plaintext highlighter-rouge">students</code> is associated with the house at the first position of the <code class="language-plaintext highlighter-rouge">houses</code> list, and so on. However, this can become quite cumbersome as our lists grow!</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>We can better our code using a <code class="language-plaintext highlighter-rouge">dict</code> as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s">"Hermoine"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Harry"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Ron"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Draco"</span><span class="p">:</span> <span class="s">"Slytherin"</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="s">"Hermoine"</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="s">"Harry"</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="s">"Ron"</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="s">"Draco"</span><span class="p">])</span>
+</code></pre></div>    </div>
+<p>Notice how we use <code class="language-plaintext highlighter-rouge">{}</code> curly braces to create a dictionary. Where <code class="language-plaintext highlighter-rouge">list</code>s use numbers to iterate through the list, <code class="language-plaintext highlighter-rouge">dict</code>s allow us to use words.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Run your code and make sure your output is as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python hogwarts.py
+Gryffindor
+Gryffindor
+Gryffindor
+Slytherin
+</code></pre></div>    </div>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>We can improve our code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s">"Hermoine"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Harry"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Ron"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Draco"</span><span class="p">:</span> <span class="s">"Slytherin"</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how executing this code, the for loop will only iterate through all the keys, resulting in a list of the names of the students. How could we print out both values and keys?</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Modify your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s">"Hermoine"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Harry"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Ron"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Draco"</span><span class="p">:</span> <span class="s">"Slytherin"</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="n">student</span><span class="p">])</span>
+</code></pre></div>    </div>
+<p>Notice how <code class="language-plaintext highlighter-rouge">students[student]</code> will go to each student’s key and find the value of the their house. Execute your code and you’ll notice how the output is a bit messy.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>We can clean up the print function by improving our code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s">"Hermoine"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Harry"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Ron"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span>
+<span class="s">"Draco"</span><span class="p">:</span> <span class="s">"Slytherin"</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student</span><span class="p">,</span> <span class="n">students</span><span class="p">[</span><span class="n">student</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s">", "</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how this creates a clean separation of a <code class="language-plaintext highlighter-rouge">, </code> between each item printed.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>If you execute <code class="language-plaintext highlighter-rouge">python hogwarts.py</code>, you should see the following:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python hogwarts.py
+Hermoine, Gryffindor
+Harry, Gryffindor
+Ron, Gryffindor
+Draco, Slytherin
+</code></pre></div>    </div>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>What if we have more information about our students? How could we associate more data with each of the students?</p>
+
+<p><img src="cs50pWeek2Slide18.png" alt="Harry Potter Names." title="Harry Potter Names."></p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>You can imagine wanting to have lots of data associated multiple things with one key. Enhance your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Hermoine"</span><span class="p">,</span> <span class="s">"house"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span> <span class="s">"patronus"</span><span class="p">:</span> <span class="s">"Otter"</span><span class="p">},</span>
+<span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Harry"</span><span class="p">,</span> <span class="s">"house"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span> <span class="s">"patronus"</span><span class="p">:</span> <span class="s">"Stag"</span><span class="p">},</span>
+<span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Ron"</span><span class="p">,</span> <span class="s">"house"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span> <span class="s">"patronus"</span><span class="p">:</span> <span class="s">"Jack Russell terrier"</span><span class="p">},</span>
+<span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Draco"</span><span class="p">,</span> <span class="s">"house"</span><span class="p">:</span> <span class="s">"Slytherin"</span><span class="p">,</span> <span class="s">"patronus"</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+<span class="p">]</span>
+</code></pre></div>    </div>
+<p>Notice how this code creates a <code class="language-plaintext highlighter-rouge">list</code> of <code class="language-plaintext highlighter-rouge">dict</code>s. The <code class="language-plaintext highlighter-rouge">list</code> called <code class="language-plaintext highlighter-rouge">students</code> has four <code class="language-plaintext highlighter-rouge">dicts</code> within it: One for each student. Also, notice that Python has a special <code class="language-plaintext highlighter-rouge">None</code> designation where there is no value associated with a key.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Now, you have access to a whole host of interesting data about these students. Now, further modify you code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Hermoine"</span><span class="p">,</span> <span class="s">"house"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span> <span class="s">"patronus"</span><span class="p">:</span> <span class="s">"Otter"</span><span class="p">},</span>
+<span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Harry"</span><span class="p">,</span> <span class="s">"house"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span> <span class="s">"patronus"</span><span class="p">:</span> <span class="s">"Stag"</span><span class="p">},</span>
+<span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Ron"</span><span class="p">,</span> <span class="s">"house"</span><span class="p">:</span> <span class="s">"Gryffindor"</span><span class="p">,</span> <span class="s">"patronus"</span><span class="p">:</span> <span class="s">"Jack Russell terrier"</span><span class="p">},</span>
+<span class="p">{</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Draco"</span><span class="p">,</span> <span class="s">"house"</span><span class="p">:</span> <span class="s">"Slytherin"</span><span class="p">,</span> <span class="s">"patronus"</span><span class="p">:</span> <span class="bp">None</span><span class="p">},</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">:</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="s">"name"</span><span class="p">],</span> <span class="n">student</span><span class="p">[</span><span class="s">"house"</span><span class="p">],</span> <span class="n">student</span><span class="p">[</span><span class="s">"patronus"</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s">", "</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how the <code class="language-plaintext highlighter-rouge">for</code> loop will iterate through each of the <code class="language-plaintext highlighter-rouge">dict</code>s inside the <code class="language-plaintext highlighter-rouge">list</code> called <code class="language-plaintext highlighter-rouge">students</code>.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>You can learn more in Python’s Dodcumentation of <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries"><code class="language-plaintext highlighter-rouge">dict</code>s</a>.</li>
+</ul>
+
+<a data-id="" id="mario" style="top: 0px;"></a><h2><a data-id="" href="#mario">Mario</a></h2>
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Remember that the classic game Mario has a hero jumping over bricks. Let’s create a textual representation of this game.</p>
+
+<p><img src="cs50pWeek2Slide21.png" alt="Mario Block." title="Mario Block."></p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Begin coding as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"#"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"#"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"#"</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how we are copying and pasting the same code over and over again.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Consider how we could better the code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"#"</span><span class="p">)</span>
+</code></pre></div>    </div>
+<p>Notice how this accomplishes essentially what we want to create.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Consider: Could we further abstract for solving more sophisticated problems later with this code? Modify your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="n">print_column</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_column</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"#"</span><span class="p">)</span>
+
+
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>    </div>
+<p>Notice how our column can grow as much as we want without any hard coding.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Now, let’s try to print a row horizontally. Modify your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="n">print_row</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_row</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"?"</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span>
+
+
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>    </div>
+<p>Notice how we now have code that can create left to right blocks.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Examining the slide below, notice how Mario has both rows and columns of blocks.</p>
+
+<p><img src="cs50pWeek2Slide24.png" alt="Mario Underground." title="Mario Underground."></p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>Consider, how could we implement both rows and columns within our code? Modify your code as follows:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="n">print_square</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_square</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+
+<span class="c1"># For each row in square
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+
+<span class="c1"># For each brick in row
+</span>        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+
+<span class="c1">#  Print brick
+</span>            <span class="k">print</span><span class="p">(</span><span class="s">"#"</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">""</span><span class="p">)</span>
+
+<span class="c1"># Print blank line
+</span>        <span class="k">print</span><span class="p">()</span>
+
+
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>    </div>
+<p>Notice that we have an outer loop addresses each row in the square. Then, we have an inner loop that prints a brick in each row. Finally, we have a <code class="language-plaintext highlighter-rouge">print</code> statement that prints a blank line.</p>
+</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>
+<p>We can further abstract away our code:</p>
+
+<div class="language-py highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="n">print_square</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_square</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">):</span>
+<span class="n">print_row</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">print_row</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"#"</span> <span class="o">*</span> <span class="n">width</span><span class="p">)</span>
+
+
+<span class="n">main</span><span class="p">()</span>
+</code></pre></div>    </div>
+</li>
+</ul>
+
+<a data-id="" id="summing-up" style="top: 0px;"></a><h2><a data-id="" href="#summing-up">Summing Up</a></h2>
+<p>You now have another power in your growing list of your Python abilities. In this lecture we addressed…</p>
+
+<ul class="fa-ul">
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span>Loops</li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><code class="language-plaintext highlighter-rouge">while</code></li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><code class="language-plaintext highlighter-rouge">for</code></li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><code class="language-plaintext highlighter-rouge">len</code></li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><code class="language-plaintext highlighter-rouge">list</code></li>
+<li data-marker="*"><span class="fa-li"><i class="fas fa-square"></i></span><code class="language-plaintext highlighter-rouge">dict</code></li>
+</ul>
+
+
+</main>
+
+</body></html>
